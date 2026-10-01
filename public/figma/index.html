@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KASTOR · Figma Design System & Prototype Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-panel: #090d16;
+      --bg-surface: #0f172a;
+      --border: #1e293b;
+      --border-bright: #334155;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --clear: #10b981;
+      --caution: #f59e0b;
+      --risk: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation */
+    header {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      color: #020617;
+      font-size: 16px;
+    }
+
+    .brand-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.1em;
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: #ffffff;
+      border: 1px solid #38bdf8;
+    }
+    .btn-primary:hover {
+      background: #0369a1;
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text);
+      border: 1px solid var(--border-bright);
+    }
+    .btn-secondary:hover {
+      background: #1e293b;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Subheader Flow Tabs */
+    .flow-nav {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 28px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .flow-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-right: 12px;
+      white-space: nowrap;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .tab-arrow {
+      color: var(--border-bright);
+      font-size: 12px;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .frame-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-panel);
+      padding: 14px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .frame-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .frame-num {
+      background: var(--accent);
+      color: #020617;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .frame-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* SVG Display Frame */
+    .viewport-box {
+      width: 100%;
+      background: #020617;
+      border: 1px solid var(--border-bright);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .viewport-box object, .viewport-box img, .viewport-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Figma Prototyping Spec Sheet */
+    .spec-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .spec-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .flow-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      font-size: 11px;
+    }
+
+    .step-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .step-text {
+      color: var(--text);
+    }
+    .step-trigger {
+      color: var(--caution);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #052e16;
+      border: 1px solid var(--clear);
+      color: #d1fae5;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="brand">
+      <div class="logo-badge">K</div>
+      <div>
+        <div class="brand-title">KASTOR FIGMA DESIGN SPECIFICATION</div>
+        <div class="brand-sub">EDITABLE COMPONENT ARCHITECTURE & 6-FRAME PROTOTYPING SUITE</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" id="btnCopySvg">
+        📋 COPY SVG TO CLIPBOARD (PASTE IN FIGMA)
+      </button>
+      <a class="btn btn-primary" id="btnDownloadCurrent" href="01_Network_Overview.svg" download="01_Network_Overview.svg">
+        ⬇ DOWNLOAD FRAME SVG
+      </a>
+      <a class="btn btn-secondary" href="kastor_figma_master_canvas.svg" download="kastor_figma_master_canvas.svg">
+        📁 MASTER FIGMA BOARD (ALL 6)
+      </a>
+    </div>
+  </header>
+
+  <!-- Prototype Flow Navigation Tabs -->
+  <div class="flow-nav">
+    <span class="flow-label">PROTOTYPE FLOW:</span>
+    <button class="tab-btn active" data-index="0" data-file="01_Network_Overview.svg">
+      <span>1. Network Overview</span>
+    </button>
+    <span class="tab-arrow">→</span>
+    <button class="tab-btn" data-index="1" data-file="02_Tile_Selected_Six_Sides.svg">
+      <span>2. Tile Selected (T-06)</span>
+    </button>
+    <span class="tab-arrow">→</span>
+    <button class="tab-btn" data-index="2" data-file="03_Sensor_Detail.svg">
+      <span>3. Sensor Detail (Side S2)</span>
+    </button>
+    <span class="tab-arrow">→</span>
+    <button class="tab-btn" data-index="3" data-file="04_Operation_Pending.svg">
+      <span>4. Operation Pending</span>
+    </button>
+    <span class="tab-arrow">→</span>
+    <button class="tab-btn" data-index="4" data-file="05_Operation_Confirmed.svg">
+      <span>5. Operation Confirmed</span>
+    </button>
+    <span class="tab-arrow">|</span>
+    <button class="tab-btn" data-index="5" data-file="06_Connection_Lost.svg" style="border-color: rgba(244, 63, 94, 0.4); color: #fb7185;">
+      <span>6. Connection Lost (Fail-Safe)</span>
+    </button>
+
+    <button class="btn btn-secondary" id="btnAutoPlay" style="margin-left: auto; padding: 4px 10px; font-size: 10px;">
+      ▶ AUTO-PLAY FLOW
+    </button>
+  </div>
+
+  <!-- Main Viewport -->
+  <main>
+    <div class="frame-meta">
+      <div>
+        <div class="frame-title">
+          <span class="frame-num" id="lblFrameNum">FRAME 1 OF 6</span>
+          <span id="lblFrameTitle">Network Overview</span>
+        </div>
+        <div class="frame-desc" id="lblFrameDesc">
+          Hexagonal tile chain in 1-to-1 linear topology pointing to orbital debris field, with unselected panel.
+        </div>
+      </div>
+      <div>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted);">
+          1440 × 900 · NATIVE VECTOR SVG · EDITABLE IN FIGMA
+        </span>
+      </div>
+    </div>
+
+    <!-- Active Frame View -->
+    <div class="viewport-box">
+      <img id="imgFrame" src="01_Network_Overview.svg" alt="KASTOR Figma Frame" />
+    </div>
+
+    <!-- Figma Prototyping Specifications -->
+    <div class="spec-card">
+      <div>
+        <div class="spec-title">FIGMA PROTOTYPE INTERACTION SPEC (QUESTION 1)</div>
+        <div class="flow-steps">
+          <div class="flow-step-item">
+            <span class="step-badge">1 → 2</span>
+            <div>
+              <div class="step-text"><strong>Select Module:</strong> Click on tile <code>T-06</code> in 3D viewport or Quick Select bar.</div>
+              <div class="step-trigger">Interaction: On Click · Action: Navigate to Frame 2 · Animation: Smart Animate (200ms)</div>
+            </div>
+          </div>
+
+          <div class="flow-step-item">
+            <span class="step-badge">2 → 3</span>
+            <div>
+              <div class="step-text"><strong>Inspect Facet:</strong> Click side facet button <code>S2 (RISK 0.48m)</code>.</div>
+              <div class="step-trigger">Interaction: On Click · Action: Navigate to Frame 3 · Animation: Smart Animate (180ms)</div>
+            </div>
+          </div>
+
+          <div class="flow-step-item">
+            <span class="step-badge">3 → 4</span>
+            <div>
+              <div class="step-text"><strong>Dispatch Command:</strong> Click <code>[▶ MOVE / ADVANCE]</code> operation button.</div>
+              <div class="step-trigger">Interaction: On Click · Action: Navigate to Frame 4 · Animation: Instant (shows Pending state)</div>
+            </div>
+          </div>
+
+          <div class="flow-step-item">
+            <span class="step-badge">4 → 5</span>
+            <div>
+              <div class="step-text"><strong>Server Confirmation:</strong> Authoritative mock server returns confirmation.</div>
+              <div class="step-trigger">Interaction: After Delay 1500ms · Action: Navigate to Frame 5 · Animation: Smart Animate (300ms)</div>
+            </div>
+          </div>
+
+          <div class="flow-step-item">
+            <span class="step-badge">Fail-Safe</span>
+            <div>
+              <div class="step-text"><strong>Connection Disconnect:</strong> Simulate communication blackout.</div>
+              <div class="step-trigger">Interaction: On Click [Disconnect] · Action: Navigate to Frame 6 · Locks all commands</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="spec-title">HOW TO EDIT IN FIGMA IN 10 SECONDS</div>
+        <div style="font-size: 11.5px; line-height: 1.7; color: var(--text-secondary);">
+          <p style="margin-bottom: 8px;">
+            <strong>Method 1: Direct Clipboard Paste (Fastest)</strong><br />
+            1. Click the <span style="color: var(--accent);">"📋 COPY SVG TO CLIPBOARD"</span> button above.<br />
+            2. Open a blank file in Figma.<br />
+            3. Press <kbd style="background: #1e293b; padding: 2px 5px; border-radius: 3px;">Ctrl + V</kbd> (or <kbd style="background: #1e293b; padding: 2px 5px; border-radius: 3px;">Cmd + V</kbd>).<br />
+            Figma will instantly paste the frame with fully editable vector layers, groups, strokes, and text objects!
+          </p>
+
+          <p style="margin-bottom: 8px;">
+            <strong>Method 2: Import Master Canvas</strong><br />
+            1. Click <span style="color: var(--accent);">"📁 MASTER FIGMA BOARD (ALL 6)"</span>.<br />
+            2. Drag the downloaded <code>kastor_figma_master_canvas.svg</code> directly into Figma.<br />
+            All 6 frames will appear neatly arranged side-by-side with labels and ready for prototype connector wire-up.
+          </p>
+
+          <p>
+            <strong>Preserved Architecture:</strong><br />
+            • JetBrains Mono & Inter typography tokens<br />
+            • Modular 6-facet sensor telemetry badges<br />
+            • 360° inspector card with grapple end-effector detail<br />
+            • 1-to-1 linear chain extending toward the orbital debris zone
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toastMsg">✓ SVG Copied to Clipboard! Ready to paste into Figma (Ctrl+V)</div>
+
+  <script>
+    const FRAMES = [
+      {
+        num: 1,
+        title: 'Network Overview',
+        desc: 'Hexagonal tile chain in 1-to-1 linear topology pointing to orbital debris field, with unselected panel.',
+        file: '01_Network_Overview.svg'
+      },
+      {
+        num: 2,
+        title: 'Tile Selected + Six Sides',
+        desc: 'Tile T-06 selected with 360° movable inspector, telemetry badges, and six facet buttons (S1-S6).',
+        file: '02_Tile_Selected_Six_Sides.svg'
+      },
+      {
+        num: 3,
+        title: 'Sensor Detail (Side S2)',
+        desc: 'Facet S2 active facing debris zone: 0.48m distance reading, visual threshold bar, and risk radar arc.',
+        file: '03_Sensor_Detail.svg'
+      },
+      {
+        num: 4,
+        title: 'Operation Pending',
+        desc: 'MOVE operation dispatched: pending banner active, commands disabled, 3D layout unchanged pending server ACK.',
+        file: '04_Operation_Pending.svg'
+      },
+      {
+        num: 5,
+        title: 'Operation Confirmed + Updated Layout',
+        desc: 'Server confirmed: authoritative position updated in 3D scene (Z: 4.55m), distance reduced, commands re-enabled.',
+        file: '05_Operation_Confirmed.svg'
+      },
+      {
+        num: 6,
+        title: 'Connection Lost + Disabled Commands',
+        desc: 'Network blackout: crimson warning banner, stale sensor alert, and all movement commands locked.',
+        file: '06_Connection_Lost.svg'
+      }
+    ];
+
+    let currentIndex = 0;
+    let autoPlayInterval = null;
+
+    const imgFrame = document.getElementById('imgFrame');
+    const lblFrameNum = document.getElementById('lblFrameNum');
+    const lblFrameTitle = document.getElementById('lblFrameTitle');
+    const lblFrameDesc = document.getElementById('lblFrameDesc');
+    const btnDownloadCurrent = document.getElementById('btnDownloadCurrent');
+    const btnCopySvg = document.getElementById('btnCopySvg');
+    const btnAutoPlay = document.getElementById('btnAutoPlay');
+    const tabs = document.querySelectorAll('.tab-btn');
+    const toast = document.getElementById('toastMsg');
+
+    function setFrame(idx) {
+      currentIndex = idx;
+      const f = FRAMES[idx];
+      imgFrame.src = f.file;
+      lblFrameNum.textContent = `FRAME ${f.num} OF 6`;
+      lblFrameTitle.textContent = f.title;
+      lblFrameDesc.textContent = f.desc;
+      btnDownloadCurrent.href = f.file;
+      btnDownloadCurrent.download = f.file;
+
+      tabs.forEach((tab, i) => {
+        if (i === idx) tab.classList.add('active');
+        else tab.classList.remove('active');
+      });
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => {
+        if (autoPlayInterval) stopAutoPlay();
+        setFrame(i);
+      });
+    });
+
+    btnCopySvg.addEventListener('click', async () => {
+      try {
+        const file = FRAMES[currentIndex].file;
+        const res = await fetch(file);
+        const svgText = await res.text();
+        await navigator.clipboard.writeText(svgText);
+        showToast(`✓ Frame ${FRAMES[currentIndex].num} SVG Copied! Press Ctrl+V in Figma to paste.`);
+      } catch (err) {
+        showToast('Could not access clipboard automatically. Download SVG directly.');
+      }
+    });
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    function toggleAutoPlay() {
+      if (autoPlayInterval) {
+        stopAutoPlay();
+      } else {
+        btnAutoPlay.textContent = '⏸ PAUSE FLOW';
+        btnAutoPlay.style.background = '#0284c7';
+        autoPlayInterval = setInterval(() => {
+          let next = (currentIndex + 1) % 5; // loop through frames 0..4 (normal flow)
+          setFrame(next);
+        }, 2200);
+      }
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+      btnAutoPlay.textContent = '▶ AUTO-PLAY FLOW';
+      btnAutoPlay.style.background = '';
+    }
+
+    btnAutoPlay.addEventListener('click', toggleAutoPlay);
+  </script>
+</body>
+</html>

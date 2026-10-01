@@ -1,0 +1,453 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" data-frame="1">
+  <defs>
+    <linearGradient id="gradLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="gradBtnMove" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="gradBtnDeploy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Frame Title metadata for Figma -->
+  <!-- 1. Network Overview : Hexagonal tile chain in 1-to-1 linear topology pointing to orbital debris field, with unselected panel -->
+
+  
+  <!-- TopBar -->
+  <g id="TopBar">
+    <rect x="0" y="0" width="1440" height="52" fill="#090d16" />
+    <line x1="0" y1="52" x2="1440" y2="52" stroke="#1e293b" stroke-width="1" />
+    
+    <!-- Logo & Title -->
+    <g id="Logo" transform="translate(20, 12)">
+      <rect x="0" y="0" width="28" height="28" rx="6" fill="url(#gradLogo)" />
+      <text x="14" y="19" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">K</text>
+      <text x="38" y="15" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700" fill="#f8fafc" letter-spacing="1.5">KASTOR</text>
+      <text x="38" y="25" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="#38bdf8" letter-spacing="1">MODULAR ROBOTICS INTERFACE · NYU CUSP</text>
+    </g>
+
+    <!-- Center System Status Badges -->
+    <g id="SystemTelemetryBadges" transform="translate(460, 14)">
+      <!-- System Health -->
+      <rect x="0" y="0" width="130" height="24" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+      <circle cx="12" cy="12" r="4" fill="#10b981" />
+      <text x="24" y="15" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#cbd5e1">SYS: NOMINAL</text>
+
+      <!-- Active Modules -->
+      <rect x="138" y="0" width="120" height="24" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+      <text x="148" y="15" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#64748b">MODULES: <tspan fill="#38bdf8">6 / 6</tspan></text>
+
+      <!-- Swarm Topology -->
+      <rect x="266" y="0" width="160" height="24" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+      <text x="276" y="15" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#64748b">CHAIN: <tspan fill="#10b981">LINEAR (1-TO-1)</tspan></text>
+    </g>
+
+    <!-- Top Right Quick Info -->
+    <g id="UserStatus" transform="translate(1220, 14)">
+      <rect x="0" y="0" width="200" height="24" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+      <text x="10" y="15" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#64748b">LATENCY: <tspan fill="#10b981">24 ms</tspan></text>
+      <text x="110" y="15" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#64748b">FPS: <tspan fill="#f8fafc">60.0</tspan></text>
+    </g>
+  </g>
+  
+  
+  <!-- Connection Banner Normal -->
+  <g id="ConnectionBannerNormal" transform="translate(0, 52)">
+    <rect x="0" y="0" width="1440" height="32" fill="#052e16" />
+    <line x1="0" y1="32" x2="1440" y2="32" stroke="#10b981" stroke-width="1" opacity="0.3" />
+    <circle cx="28" cy="16" r="4" fill="#10b981" />
+    <text x="42" y="20" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#d1fae5" letter-spacing="0.8">
+      LINK ACTIVE · CENTRAL SERVER SYNCED (HEARTBEAT 120ms · 5.8 GHz SWARM MESH)
+    </text>
+    <rect x="1300" y="5" width="120" height="22" rx="3" fill="#064e3b" stroke="#10b981" stroke-width="1" opacity="0.6" />
+    <text x="1360" y="19" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#a7f3d0" text-anchor="middle">SIM: NORMAL</text>
+  </g>
+  
+  
+  <!-- 3D Scene Viewport -->
+  <g id="SceneViewport" transform="translate(0, 84)">
+    <rect x="0" y="0" width="990" height="748" fill="#020617" />
+    <line x1="990" y1="0" x2="990" y2="748" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Isometric Space Grid -->
+    <g id="FloorGrid" opacity="0.25">
+      <line x1="80" y1="20" x2="910" y2="20" stroke="#334155" stroke-width="1" /><line x1="80" y1="70" x2="910" y2="70" stroke="#334155" stroke-width="1" /><line x1="80" y1="120" x2="910" y2="120" stroke="#334155" stroke-width="1" /><line x1="80" y1="170" x2="910" y2="170" stroke="#334155" stroke-width="1" /><line x1="80" y1="220" x2="910" y2="220" stroke="#334155" stroke-width="1" /><line x1="80" y1="270" x2="910" y2="270" stroke="#334155" stroke-width="1" /><line x1="80" y1="320" x2="910" y2="320" stroke="#334155" stroke-width="1" /><line x1="80" y1="370" x2="910" y2="370" stroke="#334155" stroke-width="1" /><line x1="80" y1="420" x2="910" y2="420" stroke="#334155" stroke-width="1" /><line x1="80" y1="470" x2="910" y2="470" stroke="#334155" stroke-width="1" /><line x1="80" y1="520" x2="910" y2="520" stroke="#334155" stroke-width="1" /><line x1="80" y1="570" x2="910" y2="570" stroke="#334155" stroke-width="1" /><line x1="80" y1="620" x2="910" y2="620" stroke="#334155" stroke-width="1" /><line x1="80" y1="670" x2="910" y2="670" stroke="#334155" stroke-width="1" /><line x1="80" y1="720" x2="910" y2="720" stroke="#334155" stroke-width="1" />
+      <line x1="70" y1="20" x2="70" y2="720" stroke="#334155" stroke-width="1" /><line x1="120" y1="20" x2="120" y2="720" stroke="#334155" stroke-width="1" /><line x1="170" y1="20" x2="170" y2="720" stroke="#334155" stroke-width="1" /><line x1="220" y1="20" x2="220" y2="720" stroke="#334155" stroke-width="1" /><line x1="270" y1="20" x2="270" y2="720" stroke="#334155" stroke-width="1" /><line x1="320" y1="20" x2="320" y2="720" stroke="#334155" stroke-width="1" /><line x1="370" y1="20" x2="370" y2="720" stroke="#334155" stroke-width="1" /><line x1="420" y1="20" x2="420" y2="720" stroke="#334155" stroke-width="1" /><line x1="470" y1="20" x2="470" y2="720" stroke="#334155" stroke-width="1" /><line x1="520" y1="20" x2="520" y2="720" stroke="#334155" stroke-width="1" /><line x1="570" y1="20" x2="570" y2="720" stroke="#334155" stroke-width="1" /><line x1="620" y1="20" x2="620" y2="720" stroke="#334155" stroke-width="1" /><line x1="670" y1="20" x2="670" y2="720" stroke="#334155" stroke-width="1" /><line x1="720" y1="20" x2="720" y2="720" stroke="#334155" stroke-width="1" /><line x1="770" y1="20" x2="770" y2="720" stroke="#334155" stroke-width="1" /><line x1="820" y1="20" x2="820" y2="720" stroke="#334155" stroke-width="1" /><line x1="870" y1="20" x2="870" y2="720" stroke="#334155" stroke-width="1" /><line x1="920" y1="20" x2="920" y2="720" stroke="#334155" stroke-width="1" />
+    </g>
+
+    <!-- Star particles -->
+    <g id="Starfield" opacity="0.4">
+      <circle cx="120" cy="80" r="1" fill="#fff" />
+      <circle cx="280" cy="140" r="1.5" fill="#fff" />
+      <circle cx="750" cy="90" r="1.2" fill="#38bdf8" />
+      <circle cx="840" cy="320" r="1" fill="#fff" />
+      <circle cx="160" cy="480" r="1.5" fill="#fff" />
+      <circle cx="890" cy="620" r="1.2" fill="#fff" />
+    </g>
+
+    <!-- ORBITAL DEBRIS ZONE -->
+    <g id="DebrisZone" transform="translate(495, 65)">
+      <!-- Hazard Perimeter Hologram -->
+      <ellipse cx="0" cy="0" rx="140" ry="42" fill="rgba(244, 63, 94, 0.08)" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="6,4" />
+      <ellipse cx="0" cy="0" rx="160" ry="48" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.4" />
+      
+      <!-- Debris Floating Fragments -->
+      <!-- Solar panel fragment -->
+      <rect x="-60" y="-18" width="40" height="22" rx="2" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1" transform="rotate(-15, -40, -7)" />
+      <!-- Metallic fuselage shard -->
+      <polygon points="35,-12 60,-5 45,15 20,8" fill="#475569" stroke="#94a3b8" stroke-width="1" />
+      <!-- Asteroid rock -->
+      <polygon points="-15,10 0,22 15,14 10,-2 -8,2" fill="#334155" stroke="#64748b" stroke-width="1" />
+
+      <!-- Holographic Label -->
+      <rect x="-110" y="-45" width="220" height="22" rx="3" fill="rgba(15, 23, 42, 0.9)" stroke="#f43f5e" stroke-width="1" />
+      <text x="0" y="-30" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#fb7185" text-anchor="middle">⚠ ORBITAL DEBRIS FIELD [ALPHA-7]</text>
+      <text x="0" y="-12" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="#fbbf24" text-anchor="middle">
+        PROXIMITY: 0.48m · HIGH IMPACT RISK
+      </text>
+    </g>
+
+    <!-- Targeting Laser from T-06 to Debris -->
+    <g id="TargetingLaser">
+      <line x1="495" y1="135" x2="495" y2="75" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4,2" />
+      <polygon points="495,75 490,85 500,85" fill="#f43f5e" />
+    </g>
+
+    <!-- Sequential Connection Conduits between Hex Tiles -->
+    <g id="ConnectionChainConduits">
+      <!-- T-01 to T-02 -->
+      <line x1="495" y1="590" x2="495" y2="505" stroke="#38bdf8" stroke-width="4" opacity="0.8" />
+      <circle cx="495" cy="547" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+      <!-- T-02 to T-03 -->
+      <line x1="495" y1="505" x2="495" y2="420" stroke="#38bdf8" stroke-width="4" opacity="0.8" />
+      <circle cx="495" cy="462" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+      <!-- T-03 to T-04 -->
+      <line x1="495" y1="420" x2="495" y2="335" stroke="#38bdf8" stroke-width="4" opacity="0.8" />
+      <circle cx="495" cy="377" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+      <!-- T-04 to T-05 -->
+      <line x1="495" y1="335" x2="495" y2="250" stroke="#38bdf8" stroke-width="4" opacity="0.8" />
+      <circle cx="495" cy="292" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+      <!-- T-05 to T-06 -->
+      <line x1="495" y1="250" x2="495" y2="165" stroke="#38bdf8" stroke-width="4" opacity="0.8" />
+      <circle cx="495" cy="207" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+    </g>
+
+    <!-- Hexagonal Robotic Tiles in Sequential Chain -->
+    <g id="HexTilesChain">
+      
+        <!-- Tile T-01 -->
+        <g id="Tile-T-01">
+          <!-- Selection Glow Ring -->
+          
+
+          <!-- Pending ghost animation preview if moving -->
+          
+
+          <!-- Outer Hexagon Prism -->
+          <path d="M 531.4,611.0 L 495.0,632.0 L 458.6,611.0 L 458.6,569.0 L 495.0,548.0 L 531.4,569.0 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+          <path d="M 527.0,608.5 L 495.0,627.0 L 463.0,608.5 L 463.0,571.5 L 495.0,553.0 L 527.0,571.5 Z" fill="none" stroke="#1e293b" stroke-width="1" />
+
+          <!-- Center Illuminated Core Ring -->
+          <circle cx="495" cy="590" r="14" fill="#020617" stroke="#10b981" stroke-width="2" />
+          <circle cx="495" cy="590" r="4" fill="#10b981" />
+
+          <!-- Tile ID & Role -->
+          <text x="495" y="572" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">T-01</text>
+          <text x="495" y="615" font-family="Inter, sans-serif" font-size="6.5" font-weight="600" fill="#64748b" text-anchor="middle">BASE ANCHOR</text>
+
+          <!-- 6 Facet Telemetry Beacons around hexagon -->
+          
+            <circle cx="529.6" cy="610.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="630.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="610.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="570.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="550.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="529.6" cy="570.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+        </g>
+        
+        <!-- Tile T-02 -->
+        <g id="Tile-T-02">
+          <!-- Selection Glow Ring -->
+          
+
+          <!-- Pending ghost animation preview if moving -->
+          
+
+          <!-- Outer Hexagon Prism -->
+          <path d="M 531.4,526.0 L 495.0,547.0 L 458.6,526.0 L 458.6,484.0 L 495.0,463.0 L 531.4,484.0 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+          <path d="M 527.0,523.5 L 495.0,542.0 L 463.0,523.5 L 463.0,486.5 L 495.0,468.0 L 527.0,486.5 Z" fill="none" stroke="#1e293b" stroke-width="1" />
+
+          <!-- Center Illuminated Core Ring -->
+          <circle cx="495" cy="505" r="14" fill="#020617" stroke="#10b981" stroke-width="2" />
+          <circle cx="495" cy="505" r="4" fill="#10b981" />
+
+          <!-- Tile ID & Role -->
+          <text x="495" y="487" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">T-02</text>
+          <text x="495" y="530" font-family="Inter, sans-serif" font-size="6.5" font-weight="600" fill="#64748b" text-anchor="middle">LINK 1</text>
+
+          <!-- 6 Facet Telemetry Beacons around hexagon -->
+          
+            <circle cx="529.6" cy="525.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="545.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="525.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="485.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="465.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="529.6" cy="485.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+        </g>
+        
+        <!-- Tile T-03 -->
+        <g id="Tile-T-03">
+          <!-- Selection Glow Ring -->
+          
+
+          <!-- Pending ghost animation preview if moving -->
+          
+
+          <!-- Outer Hexagon Prism -->
+          <path d="M 531.4,441.0 L 495.0,462.0 L 458.6,441.0 L 458.6,399.0 L 495.0,378.0 L 531.4,399.0 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+          <path d="M 527.0,438.5 L 495.0,457.0 L 463.0,438.5 L 463.0,401.5 L 495.0,383.0 L 527.0,401.5 Z" fill="none" stroke="#1e293b" stroke-width="1" />
+
+          <!-- Center Illuminated Core Ring -->
+          <circle cx="495" cy="420" r="14" fill="#020617" stroke="#10b981" stroke-width="2" />
+          <circle cx="495" cy="420" r="4" fill="#10b981" />
+
+          <!-- Tile ID & Role -->
+          <text x="495" y="402" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">T-03</text>
+          <text x="495" y="445" font-family="Inter, sans-serif" font-size="6.5" font-weight="600" fill="#64748b" text-anchor="middle">LINK 2</text>
+
+          <!-- 6 Facet Telemetry Beacons around hexagon -->
+          
+            <circle cx="529.6" cy="440.0" r="2.8" fill="#64748b" stroke="#64748b" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="460.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="440.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="400.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="380.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="529.6" cy="400.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+        </g>
+        
+        <!-- Tile T-04 -->
+        <g id="Tile-T-04">
+          <!-- Selection Glow Ring -->
+          
+
+          <!-- Pending ghost animation preview if moving -->
+          
+
+          <!-- Outer Hexagon Prism -->
+          <path d="M 531.4,356.0 L 495.0,377.0 L 458.6,356.0 L 458.6,314.0 L 495.0,293.0 L 531.4,314.0 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+          <path d="M 527.0,353.5 L 495.0,372.0 L 463.0,353.5 L 463.0,316.5 L 495.0,298.0 L 527.0,316.5 Z" fill="none" stroke="#1e293b" stroke-width="1" />
+
+          <!-- Center Illuminated Core Ring -->
+          <circle cx="495" cy="335" r="14" fill="#020617" stroke="#10b981" stroke-width="2" />
+          <circle cx="495" cy="335" r="4" fill="#10b981" />
+
+          <!-- Tile ID & Role -->
+          <text x="495" y="317" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">T-04</text>
+          <text x="495" y="360" font-family="Inter, sans-serif" font-size="6.5" font-weight="600" fill="#64748b" text-anchor="middle">LINK 3</text>
+
+          <!-- 6 Facet Telemetry Beacons around hexagon -->
+          
+            <circle cx="529.6" cy="355.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="375.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="355.0" r="2.8" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="315.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="295.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="529.6" cy="315.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+        </g>
+        
+        <!-- Tile T-05 -->
+        <g id="Tile-T-05">
+          <!-- Selection Glow Ring -->
+          
+
+          <!-- Pending ghost animation preview if moving -->
+          
+
+          <!-- Outer Hexagon Prism -->
+          <path d="M 531.4,271.0 L 495.0,292.0 L 458.6,271.0 L 458.6,229.0 L 495.0,208.0 L 531.4,229.0 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+          <path d="M 527.0,268.5 L 495.0,287.0 L 463.0,268.5 L 463.0,231.5 L 495.0,213.0 L 527.0,231.5 Z" fill="none" stroke="#1e293b" stroke-width="1" />
+
+          <!-- Center Illuminated Core Ring -->
+          <circle cx="495" cy="250" r="14" fill="#020617" stroke="#10b981" stroke-width="2" />
+          <circle cx="495" cy="250" r="4" fill="#10b981" />
+
+          <!-- Tile ID & Role -->
+          <text x="495" y="232" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">T-05</text>
+          <text x="495" y="275" font-family="Inter, sans-serif" font-size="6.5" font-weight="600" fill="#64748b" text-anchor="middle">SENSOR ARRAY</text>
+
+          <!-- 6 Facet Telemetry Beacons around hexagon -->
+          
+            <circle cx="529.6" cy="270.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="290.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="270.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="460.4" cy="230.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="210.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="529.6" cy="230.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+        </g>
+        
+        <!-- Tile T-06 -->
+        <g id="Tile-T-06">
+          <!-- Selection Glow Ring -->
+          
+
+          <!-- Pending ghost animation preview if moving -->
+          
+
+          <!-- Outer Hexagon Prism -->
+          <path d="M 534.0,187.5 L 495.0,210.0 L 456.0,187.5 L 456.0,142.5 L 495.0,120.0 L 534.0,142.5 Z" fill="#0f172a" stroke="#334155" stroke-width="2" />
+          <path d="M 529.6,185.0 L 495.0,205.0 L 460.4,185.0 L 460.4,145.0 L 495.0,125.0 L 529.6,145.0 Z" fill="none" stroke="#1e293b" stroke-width="1" />
+
+          <!-- Center Illuminated Core Ring -->
+          <circle cx="495" cy="165" r="14" fill="#020617" stroke="#10b981" stroke-width="2" />
+          <circle cx="495" cy="165" r="4" fill="#10b981" />
+
+          <!-- Tile ID & Role -->
+          <text x="495" y="147" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle">T-06</text>
+          <text x="495" y="190" font-family="Inter, sans-serif" font-size="6.5" font-weight="600" fill="#64748b" text-anchor="middle">DEBRIS GRAPPLE</text>
+
+          <!-- 6 Facet Telemetry Beacons around hexagon -->
+          
+            <circle cx="532.2" cy="186.5" r="2.8" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="208.0" r="2.8" fill="#ef4444" stroke="#ef4444" stroke-width="1.5" />
+            
+            <circle cx="457.8" cy="186.5" r="2.8" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" />
+            
+            <circle cx="457.8" cy="143.5" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="495.0" cy="122.0" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+            <circle cx="532.2" cy="143.5" r="2.8" fill="#10b981" stroke="#10b981" stroke-width="1.5" />
+            
+        </g>
+        
+    </g>
+
+    <!-- Active Obstacle Curve from T-06 Side S2 into Debris -->
+    
+
+    <!-- Viewport Camera Toolbar Overlay -->
+    <g id="CameraToolbar" transform="translate(20, 20)">
+      <rect x="0" y="0" width="130" height="28" rx="5" fill="rgba(15, 23, 42, 0.85)" stroke="#334155" stroke-width="1" />
+      <text x="12" y="18" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#38bdf8">CHAIN OVERVIEW</text>
+    </g>
+
+    <g id="TopologyBadge" transform="translate(20, 708)">
+      <rect x="0" y="0" width="380" height="26" rx="5" fill="rgba(15, 23, 42, 0.85)" stroke="#334155" stroke-width="1" />
+      <text x="14" y="17" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" fill="#cbd5e1">
+        TOPOLOGY: SEQUENTIAL HEX CHAIN · DEBRIS INTERCEPT VECTOR
+      </text>
+    </g>
+  </g>
+  
+  
+    <!-- Right Panel: Overview State -->
+    <g id="RightPanelEmpty" transform="translate(990, 84)">
+      <rect x="0" y="0" width="450" height="748" fill="#090d16" />
+      
+      <!-- Panel Header -->
+      <g transform="translate(24, 24)">
+        <text x="0" y="16" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#f8fafc" letter-spacing="1">MODULE TELEMETRY & CONTROLS</text>
+        <line x1="0" y1="28" x2="402" y2="28" stroke="#1e293b" stroke-width="1" />
+      </g>
+
+      <!-- Empty State Illustration -->
+      <g transform="translate(225, 260)">
+        <path d="M 41.6,24.0 L 0.0,48.0 L -41.6,24.0 L -41.6,-24.0 L -0.0,-48.0 L 41.6,-24.0 Z" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4,4" />
+        <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+        <text x="0" y="5" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700" fill="#38bdf8" text-anchor="middle">⬡</text>
+        <text x="0" y="75" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#f8fafc" text-anchor="middle">NO TILE SELECTED</text>
+        <text x="0" y="98" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">
+          Click any hexagonal tile in the 3D chain to inspect in 360° detail,
+        </text>
+        <text x="0" y="114" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">
+          review multi-facet telemetry, and issue movement commands.
+        </text>
+      </g>
+
+      <!-- Quick Select Buttons -->
+      <g transform="translate(24, 460)">
+        <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#64748b">QUICK SELECT MODULE:</text>
+        <g transform="translate(0, 15)">
+          
+            <rect x="0" y="0" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1" />
+            <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">T-01</text>
+          
+            <rect x="68" y="0" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1" />
+            <text x="98" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">T-02</text>
+          
+            <rect x="136" y="0" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1" />
+            <text x="166" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">T-03</text>
+          
+            <rect x="204" y="0" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1" />
+            <text x="234" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">T-04</text>
+          
+            <rect x="272" y="0" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1" />
+            <text x="302" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">T-05</text>
+          
+            <rect x="340" y="0" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1" />
+            <text x="370" y="18" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">T-06</text>
+          
+        </g>
+      </g>
+    </g>
+    
+  
+  <!-- Bottom Bar: Event Log & Simulation Trigger -->
+  <g id="BottomBar" transform="translate(0, 832)">
+    <rect x="0" y="0" width="1440" height="68" fill="#090d16" />
+    <line x1="0" y1="0" x2="1440" y2="0" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Event Log -->
+    <g transform="translate(20, 12)">
+      <text x="0" y="10" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#64748b">EVENT TIMELINE LOG:</text>
+      
+      <g transform="translate(0, 18)">
+        <text x="0" y="12" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#64748b">12:45:01.020 <tspan fill="#10b981">[SUCCESS]</tspan> Authoritative state sync complete. 6 tiles verified.</text>
+        <text x="0" y="26" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#64748b">12:45:02.140 <tspan fill="#38bdf8">[OPERATION]</tspan> Command dispatch id="op-892" type="MOVE" tile="T-06"</text>
+      </g>
+    </g>
+
+    <!-- Simulation Controls Drawer Button -->
+    <g transform="translate(1190, 16)">
+      <rect x="0" y="0" width="230" height="34" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="115" y="21" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#38bdf8" text-anchor="middle">⚙ SIMULATION & FAILURE TESTING ▲</text>
+    </g>
+  </g>
+  
+</svg>

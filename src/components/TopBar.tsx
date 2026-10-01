@@ -45,6 +45,15 @@ export function TopBar() {
       </div>
 
       <div className="topbar-right">
+        <a
+          href="/figma/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="figma-spec-link"
+          title="Open Editable Figma Design Specification & 6-Frame Flow (Question 1)"
+        >
+          FIGMA SPEC
+        </a>
         <div className="telemetry-item">
           <span className="topbar-time">{now}</span>
         </div>

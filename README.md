@@ -1,5 +1,5 @@
 # KASTOR 3D Robotics Control Prototype
-### Modular Hexagonal Space Robotics Control System · NYU CUSP Take-Home Assignment
+### Modular Hexagonal Space Robotics Control System · 
 
 An interactive 3D robotics control interface for the **KASTOR** modular space robotics platform. The system operates a sequential linear chain of hexagonal robotic tiles navigating toward an active orbital debris hazard zone, featuring real-time sensor telemetry, optimistic operation lifecycle management, and communication failure simulations.
 
